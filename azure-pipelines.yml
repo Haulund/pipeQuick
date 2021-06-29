@@ -19,3 +19,10 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+  
+steps:
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)'
+    artifactType: 'pipeline'
+    artifactName: 'drop'
